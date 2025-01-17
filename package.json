@@ -1,0 +1,14 @@
+{
+  "name": "orbidi-test-automation-framework",
+  "version": "1.0.0",
+  "description": "A comprehensive test automation framework for Orbidi's Operations product, designed to streamline quality assurance processes and ensure robust, reliable software delivery.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.7"
+  }
+}
