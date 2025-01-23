@@ -19,6 +19,8 @@ export class ManageConcentModalPage {
     private readonly manageConcentSaveChangesButton: Locator
     private readonly manageConcentWhatsappButton: Locator
 
+     //-------------------------------------- Find English Selectors ---------------------------------------//
+
 
     //------------------------------------------- Constructor ---------------------------------------------//
 
@@ -27,9 +29,9 @@ export class ManageConcentModalPage {
         this.manageConcentTitle = page.locator('xpath=//div[@id="cmplz-header-1-optin"]')
         this.manageConcentCloseButton = page.locator('xpath=/html/body/div[1]/div/div[1]/div[3]/svg')
         this.manageConcentDescription = page.locator("xpath=//div[@id='cmplz-message-1-optin']")
-        this.manageConcentAgreeButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[1]')
-        this.manageConcentDenyButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[2]')
-        this.manageConcentSeePreferenceButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[3]')
+        this.manageConcentAgreeButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-accept']")
+        this.manageConcentDenyButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-deny']")
+        this.manageConcentSeePreferenceButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-view-preferences']")
         this.manageConcentCookiesPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[1]')
         this.manageConcentPrivacyPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[2]')
         this.manageConcentPrivacyPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[2]')

@@ -16,7 +16,7 @@ export class ContactPage {
     private readonly contactFormContainerTelephone: Locator
     private readonly contactFormContainerEmail: Locator
     private readonly contactFormContainerMessage: Locator
-    private readonly contactFormContainerSendButton: Locator
+    public readonly contactFormContainerSendButton: Locator
 
 
 
@@ -35,7 +35,7 @@ export class ContactPage {
         this.contactFormContainerTelephone = page.locator('xpath=//input[@id="form-field-field_ff312a8"]')
         this.contactFormContainerEmail = page.locator('xpath=//input[@id="form-field-email"]')
         this.contactFormContainerMessage = page.locator('xpath=//textarea[@id="form-field-message"]')
-        this.contactFormContainerSendButton = page.locator('xpath=/html/body/div[3]/div[3]/div/div[2]/div/div/form/div/div[5]/button')
+        this.contactFormContainerSendButton = page.locator("xpath=//button[@class='elementor-button elementor-size-sm']")
 
     }
 

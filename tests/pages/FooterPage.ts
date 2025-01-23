@@ -6,7 +6,7 @@ export class FooterPage {
 
     private readonly footerIconImage: Locator
     private readonly footerDescription: Locator
-    private readonly footerMenuTitle: Locator
+    public readonly footerMenuTitle: Locator
     public readonly footerMenuHomeButton: Locator
     private readonly footerMenuAboutUsButton: Locator
     public readonly footerMenuServicesButton: Locator
