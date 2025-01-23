@@ -4,12 +4,12 @@ export class ManageConcentModalPage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly manageConcentTitle: Locator
+    public readonly manageConcentTitle: Locator
     private readonly manageConcentCloseButton: Locator
-    private readonly manageConcentDescription: Locator
-    private readonly manageConcentAgreeButton: Locator
-    private readonly manageConcentDenyButton: Locator
-    private readonly manageConcentSeePreferenceButton: Locator
+    public readonly manageConcentDescription: Locator
+    public readonly manageConcentAgreeButton: Locator
+    public readonly manageConcentDenyButton: Locator
+    public readonly manageConcentSeePreferenceButton: Locator
     private readonly manageConcentCookiesPolicyButton: Locator
     private readonly manageConcentPrivacyPolicyButton: Locator
     private readonly manageConcentLegalNoticeButton: Locator
@@ -26,7 +26,7 @@ export class ManageConcentModalPage {
 
         this.manageConcentTitle = page.locator('xpath=//div[@id="cmplz-header-1-optin"]')
         this.manageConcentCloseButton = page.locator('xpath=/html/body/div[1]/div/div[1]/div[3]/svg')
-        this.manageConcentDescription = page.locator('xpath=/html/body/div[1]/div/div[1]/div[2]')
+        this.manageConcentDescription = page.locator("xpath=//div[@id='cmplz-message-1-optin']")
         this.manageConcentAgreeButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[1]')
         this.manageConcentDenyButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[2]')
         this.manageConcentSeePreferenceButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[3]')

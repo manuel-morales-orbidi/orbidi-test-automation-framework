@@ -7,18 +7,18 @@ export class FooterPage {
     private readonly footerIconImage: Locator
     private readonly footerDescription: Locator
     private readonly footerMenuTitle: Locator
-    private readonly footerMenuHomeButton: Locator
+    public readonly footerMenuHomeButton: Locator
     private readonly footerMenuAboutUsButton: Locator
-    private readonly footerMenuServicesButton: Locator
-    private readonly footerMenuContactsButton: Locator
-    private readonly footerContactInformationTitle: Locator
+    public readonly footerMenuServicesButton: Locator
+    public readonly footerMenuContactsButton: Locator
+    public readonly footerContactInformationTitle: Locator
     private readonly footerContactInformationAddressTitle: Locator
     private readonly footerContactInformationAddressDescription: Locator
     private readonly footerContactInformationTelephoneTitle: Locator
     private readonly footerContactInformationTelephoneDescription: Locator
     private readonly footerContactInformationEmailTitle: Locator
     private readonly footerContactInformationEmailDescription: Locator
-    private readonly footerLegalTitle: Locator
+    public readonly footerLegalTitle: Locator
     private readonly footerLegalNoticeButton: Locator
     private readonly footerLegalPrivacyPolicyButton: Locator
     private readonly footerLegalAccessibilityButton: Locator

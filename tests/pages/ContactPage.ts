@@ -12,7 +12,7 @@ export class ContactPage {
     private readonly contactDetailsContainerEmail: Locator
     private readonly contactFormContainerTitle: Locator
     private readonly contactFormContainerDescription: Locator
-    private readonly contactFormContainerName: Locator
+    public readonly contactFormContainerName: Locator
     private readonly contactFormContainerTelephone: Locator
     private readonly contactFormContainerEmail: Locator
     private readonly contactFormContainerMessage: Locator
