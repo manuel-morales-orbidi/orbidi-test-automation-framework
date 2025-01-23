@@ -15,8 +15,7 @@ test('test', async ({ page }) => {
 test('test-1', async ({ page }) => {
     await page.goto('https://www.vitalilaser.com/');
     await page.waitForTimeout(2000);
-    await page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[1]/div').click();
-    await page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[2]/a[1]').click();
+    await expect(page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div/img')).toBeVisible()
     await expect(page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[1]/div')).toHaveText('en')
     await page.waitForTimeout(5000);
     await page.close()

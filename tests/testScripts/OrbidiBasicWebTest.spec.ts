@@ -71,3 +71,36 @@ test('validateEnglishLanguageTest', async ({ page }) => {
     await page.close()
 
 })
+
+test('validateImagesTest', async ({ page }) => {
+    await page.goto('')
+
+    const WebAboutPage = new AboutPage (page)
+    const WebHomePage = new HomePage (page)
+    const WebContactPage = new ContactPage(page)
+    const WebNavigationMenuPage = new NavigationMenuPage(page)
+    const WebServicePage = new ServicePage (page)
+
+    await expect(WebHomePage.homeBodyPrincipalBannerImage).toBeVisible()
+    await expect(WebHomePage.homeBodyAboutUsBannerImage).toBeVisible()
+    await expect(WebHomePage.homeBodyServicesFirstBlockImage).toBeVisible()
+    await expect(WebHomePage.homeBodyServicesSecondBlockImage).toBeVisible()
+    await expect(WebHomePage.homeBodyServicesthirdBlockImage).toBeVisible()
+
+    await WebNavigationMenuPage.clickNavigationAboutOption()
+    await expect(WebAboutPage.aboutFirstBlockImage).toBeVisible()
+    await expect(WebAboutPage.aboutSecondBlockImage).toBeVisible()
+
+    await WebNavigationMenuPage.clickNavigationServicesOption()
+    await expect(WebServicePage.serviceFirstBlockImage).toBeVisible()
+    await expect(WebServicePage.serviceSecondBlockImage).toBeVisible()
+    await expect(WebServicePage.serviceThirdBlockImage).toBeVisible()
+    await expect(WebServicePage.serviceFourthBlockImage).toBeVisible()
+    
+    await WebNavigationMenuPage.clickNavigationContactsOption()
+    await expect(WebContactPage.contactBlockImage).toBeVisible()
+
+
+    await page.close()
+
+})

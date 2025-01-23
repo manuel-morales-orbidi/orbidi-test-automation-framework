@@ -6,16 +6,16 @@ export class ServicePage {
 
     private readonly serviceFirstBlockTitle: Locator
     private readonly serviceFirstBlockDescription: Locator
-    private readonly serviceFirstBlockImage: Locator
+    public readonly serviceFirstBlockImage: Locator
     private readonly serviceSecondBlockTitle: Locator
     private readonly serviceSecondBlockDescription: Locator
-    private readonly serviceSecondBlockImage: Locator
+    public readonly serviceSecondBlockImage: Locator
     private readonly serviceThirdBlockTitle: Locator
     private readonly serviceThirdBlockDescription: Locator
-    private readonly serviceThirdBlockImage: Locator
+    public readonly serviceThirdBlockImage: Locator
     private readonly serviceFourthBlockTitle: Locator
     private readonly serviceFourthBlockDescription: Locator
-    private readonly serviceFourthBlockImage: Locator
+    public readonly serviceFourthBlockImage: Locator
 
 
     //------------------------------------------- Constructor ---------------------------------------------//

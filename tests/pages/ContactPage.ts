@@ -6,7 +6,7 @@ export class ContactPage {
 
     private readonly contactBlockTitle: Locator
     private readonly contactBlockDescription: Locator
-    private readonly contactBlockImage: Locator
+    public readonly contactBlockImage: Locator
     private readonly contactDetailsContainerSchedule: Locator
     private readonly contactDetailsContainerCallUs: Locator
     private readonly contactDetailsContainerEmail: Locator

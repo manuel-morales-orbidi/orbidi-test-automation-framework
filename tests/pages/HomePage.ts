@@ -6,18 +6,20 @@ export class HomePage {
 
     private readonly homeBodyTitle: Locator
     private readonly homeBodyDescription: Locator
+    public readonly homeBodyPrincipalBannerImage: Locator
     private readonly homeBodyAboutUsTitleText: Locator
     private readonly homeBodyAboutUsDescriptionText: Locator
     private readonly homeBodyAboutUsButton: Locator
+    public readonly homeBodyAboutUsBannerImage: Locator
     private readonly homeBodyServicesTitleText: Locator
     private readonly homeBodyServicesDescriptionText: Locator
-    private readonly homeBodyServicesFirstBlockImage: Locator
+    public readonly homeBodyServicesFirstBlockImage: Locator
     private readonly homeBodyServicesFirstBlockTitle: Locator
     private readonly homeBodyServicesFirstBlockDescription: Locator
-    private readonly homeBodyServicesSecondBlockImage: Locator
+    public readonly homeBodyServicesSecondBlockImage: Locator
     private readonly homeBodyServicesSecondBlockTitle: Locator
     private readonly homeBodyServicesSecondBlockDescription: Locator
-    private readonly homeBodyServicesthirdBlockImage: Locator
+    public readonly homeBodyServicesthirdBlockImage: Locator
     private readonly homeBodyServicesthirdBlockTitle: Locator
     private readonly homeBodyServicesthirdBlockDescription: Locator
     private readonly homeBodyServicesButton: Locator
@@ -27,9 +29,11 @@ export class HomePage {
     constructor(page: Page) {
         this.homeBodyTitle = page.locator('xpath=//div[@data-id="548d1e50"]')
         this.homeBodyDescription = page.locator('xpath=//div[@data-id="266d55eb"]')
+        this.homeBodyPrincipalBannerImage = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div/img')
         this.homeBodyAboutUsTitleText = page.locator('xpath=//div[@data-id="1d3c0c3b"]')
         this.homeBodyAboutUsDescriptionText = page.locator('xpath=//div[@data-id="681f2a58"]')
         this.homeBodyAboutUsButton = page.locator('xpath=//div[@data-id="60bd7485"]')
+        this.homeBodyAboutUsBannerImage = page.locator('xpath=/html/body/div[3]/div[2]/div/div[2]/div/div/img')
         this.homeBodyServicesTitleText = page.locator('xpath=//div[@data-id="313e271d"]')
         this.homeBodyServicesDescriptionText = page.locator('xpath=//div[@data-id="2d6ac156"]')
         this.homeBodyServicesFirstBlockImage = page.locator('xpath=//div[@data-id="409ade9c"]')
