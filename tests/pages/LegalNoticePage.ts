@@ -53,7 +53,7 @@ export class LegalNoticePage {
 
     constructor(page: Page) {
 
-        this.legalNoticeTitle = page.locator("//div[@data-id='4c032f7d']")
+        this.legalNoticeTitle = page.locator("xpath=//div[@data-id='4c032f7d']")
         this.legalNoticeSubtitle = page.locator('xpath=/html/body/div[3]/div/div/div[3]/div/h2[1]/strong')
         this.legalNoticeDescription = page.locator('xpath=/html/body/div[3]/div/div/div[3]/div/p[1]')
         this.legalNoticeFirstItemTitle = page.locator('xpath=/html/body/div[3]/div/div/div[3]/div/h2[2]/strong')

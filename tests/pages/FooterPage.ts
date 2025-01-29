@@ -44,10 +44,10 @@ export class FooterPage {
         this.footerContactInformationEmailTitle = page.locator('xpath=/html/body/footer/div[2]/div[3]/div[2]/div[4]/div[1]/div/h4')
         this.footerContactInformationEmailDescription = page.locator('xpath=/html/body/footer/div[2]/div[3]/div[2]/div[4]/div[2]/div/p/a')
         this.footerLegalTitle = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[1]/div/h2')
-        this.footerLegalNoticeButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[1]/ul/li[1]/a')
-        this.footerLegalPrivacyPolicyButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[1]/ul/li[2]/a')
-        this.footerLegalAccessibilityButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[1]/ul/li[3]/a')
-        this.footerLegalPolicyCookiesButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[1]/ul/li[4]/a')
+        this.footerLegalNoticeButton = page.getByRole('link', { name: 'Aviso legal' })
+        this.footerLegalPrivacyPolicyButton = page.getByRole('link', { name: 'Política de privacidad' })
+        this.footerLegalAccessibilityButton = page.getByRole('link', { name: 'Accesibilidad' })
+        this.footerLegalPolicyCookiesButton = page.getByRole('link', { name: 'Política de cookies (UE)' })
         this.footerKitDigitalRequirement = page.locator('xpath=/html/body/footer/div[3]/div/div/img')
     }
 

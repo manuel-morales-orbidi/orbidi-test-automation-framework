@@ -8,6 +8,9 @@ import { ManageConsentModalPage } from '../pages/ManageConsentModalPage';
 import { NavigationMenuPage } from '../pages/NavigationMenuPage';
 import { ServicePage } from '../pages/ServicePage';
 import { LegalNoticePage } from '../pages/LegalNoticePage';
+import { PrivacyPolicyPage } from '../pages/PrivacyPolicy';
+import { CookiesPolicyPage } from '../pages/CookiesPolicyPage';
+import { AccessibilityPage } from '../pages/AccessibilityPage';
 
 test('validateSpanishLanguageTest', async ({ page }) => {
     await page.goto('')
@@ -17,7 +20,7 @@ test('validateSpanishLanguageTest', async ({ page }) => {
     const WebManageConcentModalPage = new ManageConsentModalPage(page)
     const WebNavigationMenuPage = new NavigationMenuPage(page)
 
-    await expect(WebNavigationMenuPage.navigationLanguagePicker).toHaveText('es')
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('es')
     await expect(WebNavigationMenuPage.navigationHomeOption).toHaveText('Inicio')
     await expect(WebNavigationMenuPage.navigationServicesOption).toHaveText('Servicios')
     await expect(WebNavigationMenuPage.navigationContactsOption).toHaveText('Contacto')
@@ -48,8 +51,8 @@ test('validateEnglishLanguageTest', async ({ page }) => {
     const WebNavigationMenuPage = new NavigationMenuPage(page)
 
     await WebNavigationMenuPage.clickNavigationLanguagePicker()
-    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerOption()
-    await expect(WebNavigationMenuPage.navigationLanguagePicker).toHaveText('en')
+    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerEnglishOption()
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('en')
     await expect(WebNavigationMenuPage.navigationEnglishHomeOption).toHaveText('Start')
     await expect(WebNavigationMenuPage.navigationEnglishServicesOption).toHaveText('Services')
     await expect(WebNavigationMenuPage.navigationEnglishContactsOption).toHaveText('Contact')
@@ -247,14 +250,169 @@ test('validateLegalNoticeEnglish', async ({ page }) => {
 
     await WebFooterPage.clickFooterLegalNoticeButton()
     await WebNavigationMenuPage.clickNavigationLanguagePicker()
-    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerOption()
-    await expect(WebNavigationMenuPage.navigationLanguagePicker).toHaveText('en')
+    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerEnglishOption()
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('en')
     await expect(WebLegalNoticePage.legalNoticeTitle).toHaveText('Legal notice')
     await expect(WebLegalNoticePage.legalNoticeEnglishSubtitle).toHaveText('INFORMATION SOCIETY SERVICES LAW (LSSI)')
     await expect(WebLegalNoticePage.legalNoticeFirstItemEnglishTitle).toHaveText('1. IDENTIFICATION DATA')
     await expect(WebLegalNoticePage.legalNoticeSecondItemEnglishTitle).toHaveText('2. OBJECT')
     await expect(WebLegalNoticePage.legalNoticeThirdItemEnglishTitle).toHaveText('3. PRIVACY AND DATA PROCESSING')
     await expect(WebLegalNoticePage.legalNoticeFourthItemEnglishTitle).toHaveText('4. INDUSTRIAL AND INTELLECTUAL PROPERTY')
+
+    await page.close()
+})
+
+test('validatePrivacyPolicySpanish', async ({ page }) => {
+    await page.goto('')
+
+    const WebPrivacyPolicyPage = new PrivacyPolicyPage(page)
+    const WebFooterPage = new FooterPage(page)
+
+    await WebFooterPage.clickFooterLegalPrivacyPolicyButton()
+    await expect(WebPrivacyPolicyPage.privacyPolicyTitle).toHaveText('Política de privacidad')
+    await expect(WebPrivacyPolicyPage.privacyPolicyFirstItemTitle).toHaveText('1. INFORMACIÓN AL USUARIO')
+    await expect(WebPrivacyPolicyPage.privacyPolicyFirstItemDescription).toBeVisible()
+    await expect(WebPrivacyPolicyPage.privacyPolicySecondItemTitle).toHaveText('2. CONTACTO')
+    await expect(WebPrivacyPolicyPage.privacyPolicySecondItemDescription).toBeVisible()
+    await expect(WebPrivacyPolicyPage.privacyPolicyThirdItemTitle).toHaveText('3. PRINCIPIOS CLAVE')
+    await expect(WebPrivacyPolicyPage.privacyPolicyThirdItemDescription).toBeVisible()
+    await expect(WebPrivacyPolicyPage.privacyPolicyFourthItemTitle).toHaveText('4. RECOGIDA Y TRATAMIENTO DE SUS DATOS PERSONALES')
+    await expect(WebPrivacyPolicyPage.privacyPolicyFourthItemDescription).toBeVisible()
+    await expect(WebPrivacyPolicyPage.privacyPolicyFifthItemTitle).toHaveText('5. LEGITIMIDAD')
+    await expect(WebPrivacyPolicyPage.privacyPolicyFifthItemDescription).toBeVisible()
+    await expect(WebPrivacyPolicyPage.privacyPolicySixthItemTitle).toHaveText('6. COMUNICACIÓN DE DATOS PERSONALES')
+    await expect(WebPrivacyPolicyPage.privacyPolicySixthItemDescription).toBeVisible()
+    await expect(WebPrivacyPolicyPage.privacyPolicySeventhItemTitle).toHaveText('7. SUS DERECHOS')
+    await expect(WebPrivacyPolicyPage.privacyPolicySeventhItemDescription).toBeVisible()
+    await expect(WebPrivacyPolicyPage.privacyPolicyEighthItemTitle).toHaveText('8. INFORMACIÓN LEGAL')
+    await expect(WebPrivacyPolicyPage.privacyPolicyEighthItemDescription).toBeVisible()
+
+    await page.close()
+})
+
+test('validatePrivacyPolicyEnglish', async ({ page }) => {
+    await page.goto('')
+
+    const WebPrivacyPolicyPage = new PrivacyPolicyPage(page)
+    const WebFooterPage = new FooterPage(page)
+    const WebNavigationMenuPage = new NavigationMenuPage(page)
+    const WebManageConsentModalPage = new ManageConsentModalPage(page)
+
+    await WebManageConsentModalPage.clickManageConcentCloseButton()
+    await WebFooterPage.clickFooterLegalPrivacyPolicyButton()
+    await WebNavigationMenuPage.clickNavigationLanguagePicker()
+    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerEnglishOption()
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('en')
+    await expect(WebPrivacyPolicyPage.privacyPolicyTitle).toHaveText('Privacy Policy')
+    await expect(WebPrivacyPolicyPage.privacyPolicyFirstItemEnglishTitle).toHaveText('1. INFORMATION TO THE USER')
+    await expect(WebPrivacyPolicyPage.privacyPolicySecondItemEnglishTitle).toHaveText('2. CONTACT')
+    await expect(WebPrivacyPolicyPage.privacyPolicyThirdItemEnglishTitle).toHaveText('3. KEY PRINCIPLES')
+    //await expect(WebPrivacyPolicyPage.privacyPolicyFourthItemEnglishTitle).toHaveText('4. COLLECTION AND PROCESSING OF YOUR PERSONAL DATA')
+
+    await page.close()
+})
+
+test('validateCookiesPolicySpanish', async ({ page }) => {
+    await page.goto('')
+
+    const WebCookiesPolicyPage = new CookiesPolicyPage(page)
+    const WebFooterPage = new FooterPage(page)
+    const WebManageConsentModalPage = new ManageConsentModalPage(page)
+
+    await WebManageConsentModalPage.clickManageConcentCloseButton()
+    await WebFooterPage.clickFooterLegalPolicyCookiesButton()
+    await expect(WebCookiesPolicyPage.cookiesPolicyTitle).toHaveText('Política de cookies (UE)')
+    await expect(WebCookiesPolicyPage.cookiesPolicyDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicyFirstItemTitle).toHaveText('1. Introducción')
+    await expect(WebCookiesPolicyPage.cookiesPolicyFirstItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicySecondItemTitle).toHaveText('2. ¿Qué son las cookies?')
+    await expect(WebCookiesPolicyPage.cookiesPolicySecondItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicyThirdItemTitle).toHaveText('3. ¿Qué son los scripts?')
+    await expect(WebCookiesPolicyPage.cookiesPolicyThirdItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicyFourthItemTitle).toHaveText('4. ¿Qué es una baliza web?')
+    await expect(WebCookiesPolicyPage.cookiesPolicyFourthItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicyFifthItemTitle).toHaveText('5. Cookies')
+    await expect(WebCookiesPolicyPage.cookiesPolicyFifthItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicySixthItemTitle).toHaveText('6. Cookies usadas')
+    await expect(WebCookiesPolicyPage.cookiesPolicySixthItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicySeventhItemTitle).toHaveText('7. Consentimiento')
+    await expect(WebCookiesPolicyPage.cookiesPolicySeventhItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicyEighthItemTitle).toHaveText('8. Activación/desactivación y borrado de cookies')
+    await expect(WebCookiesPolicyPage.cookiesPolicyEighthItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicyNinthItemTitle).toHaveText('9. Tus derechos con respecto a los datos personales')
+    await expect(WebCookiesPolicyPage.cookiesPolicyNinthItemDescription).toBeVisible()
+    await expect(WebCookiesPolicyPage.cookiesPolicyTenthItemTitle).toHaveText('10. Datos de contacto')
+    await expect(WebCookiesPolicyPage.cookiesPolicyTenthItemDescription).toBeVisible()
+
+    await page.close()
+})
+
+test('validateCookiesPolicyEnglish', async ({ page }) => {
+    await page.goto('')
+
+    const WebCookiesPolicyPage = new CookiesPolicyPage(page)
+    const WebFooterPage = new FooterPage(page)
+    const WebNavigationMenuPage = new NavigationMenuPage(page)
+    const WebManageConsentModalPage = new ManageConsentModalPage(page)
+
+    await WebManageConsentModalPage.clickManageConcentCloseButton()
+    await WebFooterPage.clickFooterLegalPolicyCookiesButton()
+    await WebNavigationMenuPage.clickNavigationLanguagePicker()
+    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerEnglishOption()
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('en')
+    await expect(WebCookiesPolicyPage.cookiesPolicyEnglishTitle).toHaveText('Cookie Policy (EU)')
+    await expect(WebCookiesPolicyPage.cookiesPolicyFirstItemEnglishTitle).toHaveText('1. Introduction')
+    await expect(WebCookiesPolicyPage.cookiesPolicySecondItemEnglishTitle).toHaveText('2. What are cookies?')
+    await expect(WebCookiesPolicyPage.cookiesPolicyThirdItemEnglishTitle).toHaveText('3. What are scripts?')
+
+    await page.close()
+})
+
+test('validateAccessibilitySpanish', async ({ page }) => {
+    await page.goto('')
+
+    const WebAccesibilityPage = new AccessibilityPage(page)
+    const WebFooterPage = new FooterPage(page)
+    const WebManageConsentModalPage = new ManageConsentModalPage(page)
+
+    await WebManageConsentModalPage.clickManageConcentCloseButton()
+    await WebFooterPage.clickFooterLegalAccessibilityButton()
+    await expect(WebAccesibilityPage.accessibilityTitle).toHaveText('Accesibilidad')
+    await expect(WebAccesibilityPage.accessibilityDescription).toBeVisible()
+    await expect(WebAccesibilityPage.accessibilityFirstItemTitle).toHaveText('SITUACIÓN DE CUMPLIMIENTO')
+    await expect(WebAccesibilityPage.accessibilityFirstItemDescription).toBeVisible()
+    await expect(WebAccesibilityPage.accessibilitySecondItemTitle).toHaveText('CONTENIDO NO ACCESIBLE')
+    await expect(WebAccesibilityPage.accessibilitySecondItemDescription).toBeVisible()
+    await expect(WebAccesibilityPage.accessibilityThirdItemTitle).toHaveText('PREPARACIÓN DE LA PRESENTE DECLARACIÓN DE ACCESIBILIDAD')
+    await expect(WebAccesibilityPage.accessibilityThirdItemDescription).toBeVisible()
+    await expect(WebAccesibilityPage.accessibilityFourthItemTitle).toHaveText('OBSERVACIONES Y DATOS DE CONTACTO')
+    await expect(WebAccesibilityPage.accessibilityFourthItemDescription).toBeVisible()
+    await expect(WebAccesibilityPage.accessibilityFifthItemTitle).toHaveText('Solicitudes de información accesible y quejas')
+    await expect(WebAccesibilityPage.accessibilitySixthItemTitle).toHaveText('PROCEDIMIENTO DE APLICACIÓN')
+    await expect(WebAccesibilityPage.accessibilitySixthItemDescription).toBeVisible()
+    await expect(WebAccesibilityPage.accessibilitySeventhItemTitle).toHaveText('CONTENIDO OPCIONAL')
+    await expect(WebAccesibilityPage.accessibilitySeventhItemDescription).toBeVisible()
+
+    await page.close()
+})
+
+test('validateAccessibilityEnglish', async ({ page }) => {
+    await page.goto('')
+
+    const WebAccesibilityPage = new AccessibilityPage(page)
+    const WebFooterPage = new FooterPage(page)
+    const WebNavigationMenuPage = new NavigationMenuPage(page)
+    const WebManageConsentModalPage = new ManageConsentModalPage(page)
+
+    await WebManageConsentModalPage.clickManageConcentCloseButton()
+    await WebFooterPage.clickFooterLegalAccessibilityButton()
+    await WebNavigationMenuPage.clickNavigationLanguagePicker()
+    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerEnglishOption()
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('en')
+    await expect(WebAccesibilityPage.accessibilityTitle).toHaveText('Accessibility')
+    await expect(WebAccesibilityPage.accessibilityFirstItemEnglishTitle).toHaveText('COMPLIANCE STATUS')
+    await expect(WebAccesibilityPage.accessibilitySecondItemEnglishTitle).toHaveText('CONTENT NOT ACCESSIBLE')
+    await expect(WebAccesibilityPage.accessibilityThirdItemEnglishTitle).toHaveText('PREPARATION OF THIS ACCESSIBILITY STATEMENT')
 
     await page.close()
 })

@@ -10,11 +10,15 @@ export class NavigationMenuPage {
     public readonly navigationServicesOption: Locator
     public readonly navigationContactsOption: Locator
     public readonly navigationLanguagePicker: Locator
-    public readonly navigationSelectLanguagePickerOption: Locator
+    public readonly navigationSelectLanguagePickerEnglishOption: Locator
+    public readonly navigationSelectLanguagePickerSpanishOption: Locator
 
-    //-------------------------------------- Find English Selectors ---------------------------------------//
+    public readonly navigationLanguageAssertionText: Locator
+
+    //-------------------------------------- Find English Menu Selectors ---------------------------------------//
 
     public readonly navigationEnglishHomeOption: Locator
+    public readonly navigationEnglishAboutOption: Locator
     public readonly navigationEnglishServicesOption: Locator
     public readonly navigationEnglishContactsOption: Locator
 
@@ -26,9 +30,16 @@ export class NavigationMenuPage {
         this.navigationAboutOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[2]/a')
         this.navigationServicesOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[3]/a')
         this.navigationContactsOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[4]/a')
-        this.navigationLanguagePicker = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[1]/div')
-        this.navigationSelectLanguagePickerOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[2]/a[1]')
+        this.navigationLanguagePicker = page.locator('.gt_float_switcher-arrow').first()
+        this.navigationSelectLanguagePickerEnglishOption = page.getByRole('link', { name: 'en English' })
+        this.navigationSelectLanguagePickerSpanishOption = page.getByRole('link', { name: 'en Spanish' })
+
+        this.navigationLanguageAssertionText = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[1]/div/span[1]')
+       
+    //------------------------------------------- English Menu Constructor ---------------------------------------------//  
+
         this.navigationEnglishHomeOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[1]')
+        this.navigationEnglishAboutOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[2]')
         this.navigationEnglishServicesOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[3]')
         this.navigationEnglishContactsOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[4]')
 
@@ -51,14 +62,26 @@ export class NavigationMenuPage {
     async clickNavigationContactsOption() {
         await this.navigationContactsOption.click()
     }
-    async clickNavigationEnglishContactsOption() {
-        await this.navigationEnglishContactsOption.click()
-    }
     async clickNavigationLanguagePicker() {
         await this.navigationLanguagePicker.click()
     }
-    async clickNavigationSelectLanguagePickerOption() {
-        await this.navigationSelectLanguagePickerOption.click()
+    async clickNavigationSelectLanguagePickerEnglishOption() {
+        await this.navigationSelectLanguagePickerEnglishOption.click()
+    }
+
+    //------------------------------------- English Action Methods ----------------------------------------//
+
+    async clickNavigationEnglishHomeOption() {
+        await this.navigationEnglishHomeOption.click()
+    }
+    async clickNavigationEnglishAboutOption() {
+        await this.navigationEnglishAboutOption.click()
+    }
+    async clickNavigationEnglishServicesOption() {
+        await this.navigationEnglishServicesOption.click()
+    }
+    async clickNavigationEnglishContactsOption() {
+        await this.navigationEnglishContactsOption.click()
     }
 
 }
