@@ -71,7 +71,7 @@ export class FooterPage {
     async clickFooterServicesButton() {
         await this.footerMenuServicesButton.click()
     }
-    async clickFooterContactsButton() {
+    async clickFooterMenuContactsButton() {
         await this.footerMenuContactsButton.click()
     }
     async getTextFooterContactInformationTitle() {
@@ -98,7 +98,7 @@ export class FooterPage {
     async getTextFooterLegalTitle() {
         await this.footerLegalTitle.click()
     }
-    async getTextFooterLegalNoticeButton() {
+    async clickFooterLegalNoticeButton() {
         await this.footerLegalNoticeButton.click()
     }
     async clickFooterLegalPrivacyPolicyButton() {

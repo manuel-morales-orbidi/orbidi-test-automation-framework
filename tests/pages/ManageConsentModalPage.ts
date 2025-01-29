@@ -1,23 +1,23 @@
 import { Location, Locator, Page } from "@playwright/test";
 
-export class ManageConcentModalPage {
+export class ManageConsentModalPage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    public readonly manageConcentTitle: Locator
-    private readonly manageConcentCloseButton: Locator
-    public readonly manageConcentDescription: Locator
-    public readonly manageConcentAgreeButton: Locator
-    public readonly manageConcentDenyButton: Locator
-    public readonly manageConcentSeePreferenceButton: Locator
-    private readonly manageConcentCookiesPolicyButton: Locator
-    private readonly manageConcentPrivacyPolicyButton: Locator
-    private readonly manageConcentLegalNoticeButton: Locator
-    private readonly manageConcentFunctionalPicker: Locator
-    private readonly manageConcentStadisticsPicker: Locator
-    private readonly manageConcentMarketingPicker: Locator
-    private readonly manageConcentSaveChangesButton: Locator
-    private readonly manageConcentWhatsappButton: Locator
+    public readonly manageConsentTitle: Locator
+    private readonly manageConsentCloseButton: Locator
+    public readonly manageConsentDescription: Locator
+    public readonly manageConsentAgreeButton: Locator
+    public readonly manageConsentDenyButton: Locator
+    public readonly manageConsentSeePreferenceButton: Locator
+    private readonly manageConsentCookiesPolicyButton: Locator
+    private readonly manageConsentPrivacyPolicyButton: Locator
+    private readonly manageConsentLegalNoticeButton: Locator
+    private readonly manageConsentFunctionalPicker: Locator
+    private readonly manageConsentStadisticsPicker: Locator
+    private readonly manageConsentMarketingPicker: Locator
+    private readonly manageConsentSaveChangesButton: Locator
+    private readonly manageConsentWhatsappButton: Locator
 
      //-------------------------------------- Find English Selectors ---------------------------------------//
 
@@ -26,67 +26,67 @@ export class ManageConcentModalPage {
 
     constructor(page: Page) {
 
-        this.manageConcentTitle = page.locator('xpath=//div[@id="cmplz-header-1-optin"]')
-        this.manageConcentCloseButton = page.locator('xpath=/html/body/div[1]/div/div[1]/div[3]/svg')
-        this.manageConcentDescription = page.locator("xpath=//div[@id='cmplz-message-1-optin']")
-        this.manageConcentAgreeButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-accept']")
-        this.manageConcentDenyButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-deny']")
-        this.manageConcentSeePreferenceButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-view-preferences']")
-        this.manageConcentCookiesPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[1]')
-        this.manageConcentPrivacyPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[2]')
-        this.manageConcentPrivacyPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[2]')
-        this.manageConcentLegalNoticeButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[3]')
-        this.manageConcentFunctionalPicker = page.locator('xpath=/html/body/div[1]/div/div[3]/div[2]/details[1]/summary/span/span[3]/svg')
-        this.manageConcentStadisticsPicker = page.locator('xpath=/html/body/div[1]/div/div[3]/div[2]/details[3]/summary/span/span[3]/svg')
-        this.manageConcentMarketingPicker = page.locator('xpath=/html/body/div[1]/div/div[3]/div[2]/details[4]/summary/span/span[3]/svg')
-        this.manageConcentSaveChangesButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[4]')
-        this.manageConcentWhatsappButton = page.locator('xpath=//div[@id="ht-ctc-chat"]')
+        this.manageConsentTitle = page.locator('xpath=//div[@id="cmplz-header-1-optin"]')
+        this.manageConsentCloseButton = page.locator('xpath=//div[@class="cmplz-close"]')
+        this.manageConsentDescription = page.locator("xpath=//div[@id='cmplz-message-1-optin']")
+        this.manageConsentAgreeButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-accept']")
+        this.manageConsentDenyButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-deny']")
+        this.manageConsentSeePreferenceButton = page.locator("xpath=//button[@class='cmplz-btn cmplz-view-preferences']")
+        this.manageConsentCookiesPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[1]')
+        this.manageConsentPrivacyPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[2]')
+        this.manageConsentPrivacyPolicyButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[2]')
+        this.manageConsentLegalNoticeButton = page.locator('xpath=/html/body/div[1]/div/div[7]/a[3]')
+        this.manageConsentFunctionalPicker = page.locator('xpath=/html/body/div[1]/div/div[3]/div[2]/details[1]/summary/span/span[3]/svg')
+        this.manageConsentStadisticsPicker = page.locator('xpath=/html/body/div[1]/div/div[3]/div[2]/details[3]/summary/span/span[3]/svg')
+        this.manageConsentMarketingPicker = page.locator('xpath=/html/body/div[1]/div/div[3]/div[2]/details[4]/summary/span/span[3]/svg')
+        this.manageConsentSaveChangesButton = page.locator('xpath=/html/body/div[1]/div/div[6]/button[4]')
+        this.manageConsentWhatsappButton = page.locator('xpath=//div[@id="ht-ctc-chat"]')
     }
 
     //----------------------------------------- Action Methods --------------------------------------------//
 
 
     async getTextManageConcentTitle() {
-        await this.manageConcentTitle.click()
+        await this.manageConsentTitle.click()
     }
     async clickManageConcentCloseButton() {
-        await this.manageConcentCloseButton.click()
+        await this.manageConsentCloseButton.click()
     }
     async getTextManageConcentDescription() {
-        await this.manageConcentDescription.click()
+        await this.manageConsentDescription.click()
     }
     async clickManageConcentAgreeButton() {
-        await this.manageConcentAgreeButton.click()
+        await this.manageConsentAgreeButton.click()
     }
     async getTextManageConcentDenyButton() {
-        await this.manageConcentDenyButton.click()
+        await this.manageConsentDenyButton.click()
     }
     async clickManageConcentSeeMoreButton() {
-        await this.manageConcentSeePreferenceButton.click()
+        await this.manageConsentSeePreferenceButton.click()
     }
     async clickManageConcentCookiesPolicyButton() {
-        await this.manageConcentCookiesPolicyButton.click()
+        await this.manageConsentCookiesPolicyButton.click()
     }
     async clickManageConcentPrivacyPolicyButton() {
-        await this.manageConcentPrivacyPolicyButton.click()
+        await this.manageConsentPrivacyPolicyButton.click()
     }
     async clickManageConcentLegalNoticeButton() {
-        await this.manageConcentLegalNoticeButton.click()
+        await this.manageConsentLegalNoticeButton.click()
     }
     async clickManageConcentFunctionalPicker() {
-        await this.manageConcentFunctionalPicker.click()
+        await this.manageConsentFunctionalPicker.click()
     }
     async clickManageConcentStadisticsPicker() {
-        await this.manageConcentStadisticsPicker.click()
+        await this.manageConsentStadisticsPicker.click()
     }
     async clickManageConcentMarketingPicker() {
-        await this.manageConcentMarketingPicker.click()
+        await this.manageConsentMarketingPicker.click()
     }
     async clickManageConcentSaveChangesButton() {
-        await this.manageConcentSaveChangesButton.click()
+        await this.manageConsentSaveChangesButton.click()
     }
     async clickManageConcentWhatsappButton() {
-        await this.manageConcentWhatsappButton.click()
+        await this.manageConsentWhatsappButton.click()
     }
 
 }

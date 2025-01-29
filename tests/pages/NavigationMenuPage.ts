@@ -28,7 +28,6 @@ export class NavigationMenuPage {
         this.navigationContactsOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[4]/a')
         this.navigationLanguagePicker = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[1]/div')
         this.navigationSelectLanguagePickerOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div/div/div[2]/div/div[2]/a[1]')
-
         this.navigationEnglishHomeOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[1]')
         this.navigationEnglishServicesOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[3]')
         this.navigationEnglishContactsOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[4]')
@@ -41,7 +40,7 @@ export class NavigationMenuPage {
         await this.navigationIconImage.click()
     }
     async clickNavigationHomeOption() {
-        await this.navigationHomeOption.getAttribute('')
+        await this.navigationHomeOption.click()
     }
     async clickNavigationAboutOption() {
         await this.navigationAboutOption.click()
