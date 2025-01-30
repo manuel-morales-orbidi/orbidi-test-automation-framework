@@ -4,7 +4,7 @@ export class HomePage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly homeBodyTitle: Locator
+    public readonly homeBodyTitle: Locator
     private readonly homeBodyDescription: Locator
     public readonly homeBodyPrincipalBannerImage: Locator
     private readonly homeBodyAboutUsTitleText: Locator

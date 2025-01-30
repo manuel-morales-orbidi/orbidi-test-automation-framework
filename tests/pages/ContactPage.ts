@@ -4,7 +4,7 @@ export class ContactPage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly contactBlockTitle: Locator
+    public readonly contactBlockTitle: Locator
     private readonly contactBlockDescription: Locator
     public readonly contactBlockImage: Locator
     private readonly contactDetailsContainerSchedule: Locator

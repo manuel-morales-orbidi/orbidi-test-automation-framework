@@ -22,6 +22,15 @@ export class NavigationMenuPage {
     public readonly navigationEnglishServicesOption: Locator
     public readonly navigationEnglishContactsOption: Locator
 
+    //-------------------------------------- Find Responsive Menu Selectors ---------------------------------------//
+
+    private readonly navigationResponsiveHamburgerMenuIcon: Locator
+    private readonly navigationResponsiveHomeMenuOption: Locator
+    private readonly navigationResponsiveAboutMenuOption: Locator
+    private readonly navigationResponsiveServicesMenuOption: Locator
+    private readonly navigationResponsiveContactMenuOption: Locator
+
+
     //------------------------------------------- Constructor ---------------------------------------------//
 
     constructor(page: Page) {
@@ -42,6 +51,15 @@ export class NavigationMenuPage {
         this.navigationEnglishAboutOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[2]')
         this.navigationEnglishServicesOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[3]')
         this.navigationEnglishContactsOption = page.locator('xpath=/html/body/div[3]/div[1]/div[2]/div[1]/div/nav[1]/ul/li[4]')
+
+
+    //------------------------------------------- Responsive Menu Constructor ---------------------------------------------//  
+
+        this.navigationResponsiveHamburgerMenuIcon = page.locator("xpath=//div[@aria-label='Alternar menú']").first()
+        this.navigationResponsiveHomeMenuOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[2]/ul/li[1]/a')
+        this.navigationResponsiveAboutMenuOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[2]/ul/li[2]/a')
+        this.navigationResponsiveServicesMenuOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[2]/ul/li[3]/a')
+        this.navigationResponsiveContactMenuOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[2]/ul/li[4]/a')
 
     }
 
@@ -82,6 +100,24 @@ export class NavigationMenuPage {
     }
     async clickNavigationEnglishContactsOption() {
         await this.navigationEnglishContactsOption.click()
+    }
+
+    //------------------------------------- Responsive Action Methods ----------------------------------------//
+
+    async clickNavigationResponsiveHamburgerMenuIcon() {
+        await this.navigationResponsiveHamburgerMenuIcon.click()
+    }
+    async clickNavigationResponsiveHomeMenuOption() {
+        await this.navigationResponsiveHomeMenuOption.click()
+    }
+    async clickNavigationResponsiveAboutMenuOption() {
+        await this.navigationResponsiveAboutMenuOption.click()
+    }
+    async clickNavigationResponsiveServicesMenuOption() {
+        await this.navigationResponsiveServicesMenuOption.click()
+    }
+    async clickNavigationResponsiveContactMenuOption() {
+        await this.navigationResponsiveContactMenuOption.click()
     }
 
 }

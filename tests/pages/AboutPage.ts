@@ -4,7 +4,7 @@ export class AboutPage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly aboutFirstBlockTitle: Locator
+    public readonly aboutFirstBlockTitle: Locator
     private readonly aboutFirstBlockDescription: Locator
     public readonly aboutFirstBlockImage: Locator
     private readonly aboutSecondBlockTitle: Locator

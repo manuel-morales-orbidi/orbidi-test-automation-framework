@@ -4,7 +4,7 @@ export class ServicePage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly serviceFirstBlockTitle: Locator
+    public readonly serviceFirstBlockTitle: Locator
     private readonly serviceFirstBlockDescription: Locator
     public readonly serviceFirstBlockImage: Locator
     private readonly serviceSecondBlockTitle: Locator
@@ -21,7 +21,7 @@ export class ServicePage {
     //------------------------------------------- Constructor ---------------------------------------------//
 
     constructor(page: Page) {
-        this.serviceFirstBlockTitle = page.locator('xpath=//div[@data-id="4778097e"]')
+        this.serviceFirstBlockTitle = page.locator("xpath=//div[@data-id='4778097e']")
         this.serviceFirstBlockDescription = page.locator('xpath=//div[@data-id="6d47739c"]')
         this.serviceFirstBlockImage = page.locator('xpath=//div[@data-id="617ca5e7"]')
         this.serviceSecondBlockTitle = page.locator('xpath=//div[@data-id="4218d1ba"]')

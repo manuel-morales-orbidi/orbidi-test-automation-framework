@@ -198,7 +198,7 @@ test('validateAllButtonsTest', async ({ page }) => {
     await WebFooterPage.clickFooterLegalPrivacyPolicyButton()
     await WebFooterPage.clickFooterLegalPolicyCookiesButton()
     await WebFooterPage.clickFooterLegalAccessibilityButton()
-    
+
     await page.close()
 
 })
