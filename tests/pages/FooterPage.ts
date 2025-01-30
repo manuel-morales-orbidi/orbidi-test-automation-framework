@@ -25,6 +25,14 @@ export class FooterPage {
     private readonly footerLegalPolicyCookiesButton: Locator
     private readonly footerKitDigitalRequirement: Locator
 
+    //------------------------------------ Find Responsive Selectors --------------------------------------//
+
+    private readonly footerLegalNoticeResponsiveButton: Locator
+    private readonly footerLegalPrivacyPolicyResponsiveButton: Locator
+    private readonly footerLegalAccessibilityResponsiveButton: Locator
+    private readonly footerLegalPolicyCookiesResponsiveButton: Locator
+
+
 
     //------------------------------------------- Constructor ---------------------------------------------//
 
@@ -49,6 +57,14 @@ export class FooterPage {
         this.footerLegalAccessibilityButton = page.getByRole('link', { name: 'Accesibilidad' })
         this.footerLegalPolicyCookiesButton = page.getByRole('link', { name: 'Política de cookies (UE)' })
         this.footerKitDigitalRequirement = page.locator('xpath=/html/body/footer/div[3]/div/div/img')
+
+    //------------------------------------ Responsive Constructor -----------------------------------------//
+
+    this.footerLegalNoticeResponsiveButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[2]/ul/li[1]/a')
+    this.footerLegalPrivacyPolicyResponsiveButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[2]/ul/li[2]/a')
+    this.footerLegalAccessibilityResponsiveButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[2]/ul/li[3]/a')
+    this.footerLegalPolicyCookiesResponsiveButton = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[2]/div/nav[2]/ul/li[4]/a')
+
     }
 
     //----------------------------------------- Action Methods --------------------------------------------//
@@ -112,6 +128,21 @@ export class FooterPage {
     }
     async getAttributeFooterKitDigitalRequirement() {
         await this.footerKitDigitalRequirement.click()
+    }
+
+    //--------------------------------- Responsive Action Methods -----------------------------------------//
+
+    async clickFooterLegalNoticeResponsiveButton() {
+        await this.footerLegalNoticeResponsiveButton.click()
+    }
+    async clickFooterLegalPrivacyPolicyResponsiveButton() {
+        await this.footerLegalPrivacyPolicyResponsiveButton.click()
+    }
+    async clickFooterLegalAccessibilityResponsiveButton() {
+        await this.footerLegalAccessibilityResponsiveButton.click()
+    }
+    async clickFooterLegalPolicyCookiesResponsiveButton() {
+        await this.footerLegalPolicyCookiesResponsiveButton.click()
     }
 
 }
