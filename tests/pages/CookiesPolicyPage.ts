@@ -73,7 +73,7 @@ export class CookiesPolicyPage {
         this.cookiesPolicyNinthItemTitle = page.getByRole('heading', { name: '9. Tus derechos con respecto a los datos personales' })
         this.cookiesPolicyNinthItemDescription = page.locator('xpath=/html/body/div[2]/div/div/div[3]/div/div/p[19]')
         this.cookiesPolicyTenthItemTitle = page.getByRole('heading', { name: '10. Datos de contacto' })
-        this.cookiesPolicyTenthItemDescription = page.locator('xpath=/html/body/div[2]/div/div/div[3]/div/div/p[21]')
+        this.cookiesPolicyTenthItemDescription = page.locator('xpath=/html/body/div[2]/div/div/div[3]/div/div/p[20]')
         
 
  

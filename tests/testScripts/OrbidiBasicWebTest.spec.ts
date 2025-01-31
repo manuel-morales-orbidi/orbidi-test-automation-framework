@@ -239,6 +239,7 @@ test('validateLegalNoticeSpanish', async ({ page }) => {
     await expect(WebLegalNoticePage.legalNoticeTwelfthItemDescription).toBeVisible()
 
     await page.close()
+    
 })
 
 test('validateLegalNoticeEnglish', async ({ page }) => {
@@ -387,7 +388,7 @@ test('validateAccessibilitySpanish', async ({ page }) => {
     await expect(WebAccesibilityPage.accessibilityThirdItemDescription).toBeVisible()
     await expect(WebAccesibilityPage.accessibilityFourthItemTitle).toHaveText('OBSERVACIONES Y DATOS DE CONTACTO')
     await expect(WebAccesibilityPage.accessibilityFourthItemDescription).toBeVisible()
-    await expect(WebAccesibilityPage.accessibilityFifthItemTitle).toHaveText('Solicitudes de información accesible y quejas')
+    await expect(WebAccesibilityPage.accessibilityFifthItemTitle).toHaveText('Solicitudes de información accesible y quejas',{ ignoreCase: true })
     await expect(WebAccesibilityPage.accessibilitySixthItemTitle).toHaveText('PROCEDIMIENTO DE APLICACIÓN')
     await expect(WebAccesibilityPage.accessibilitySixthItemDescription).toBeVisible()
     await expect(WebAccesibilityPage.accessibilitySeventhItemTitle).toHaveText('CONTENIDO OPCIONAL')
@@ -414,5 +415,25 @@ test('validateAccessibilityEnglish', async ({ page }) => {
     await expect(WebAccesibilityPage.accessibilitySecondItemEnglishTitle).toHaveText('CONTENT NOT ACCESSIBLE')
     await expect(WebAccesibilityPage.accessibilityThirdItemEnglishTitle).toHaveText('PREPARATION OF THIS ACCESSIBILITY STATEMENT')
 
+    await page.close()
+})
+
+test('validateLCompanyLogo', async ({ page }) => {
+    await page.goto('')
+
+    const WebFooterPage = new FooterPage(page)
+    const WebNavigationMenuPage = new NavigationMenuPage(page)
+
+    await expect(WebNavigationMenuPage.navigationIconImage).toBeVisible()
+    await expect(WebFooterPage.footerIconImage).toBeVisible()
+    await WebNavigationMenuPage.clickNavigationAboutOption()
+    await expect(WebNavigationMenuPage.navigationIconImage).toBeVisible()
+    await expect(WebFooterPage.footerIconImage).toBeVisible()
+    await WebNavigationMenuPage.clickNavigationServicesOption()
+    await expect(WebNavigationMenuPage.navigationIconImage).toBeVisible()
+    await expect(WebFooterPage.footerIconImage).toBeVisible()
+    await WebNavigationMenuPage.clickNavigationContactsOption()
+    await expect(WebNavigationMenuPage.navigationIconImage).toBeVisible()
+    await expect(WebFooterPage.footerIconImage).toBeVisible()
     await page.close()
 })

@@ -4,7 +4,7 @@ export class NavigationMenuPage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly navigationIconImage: Locator
+    public readonly navigationIconImage: Locator
     public readonly navigationHomeOption: Locator
     public readonly navigationAboutOption: Locator
     public readonly navigationServicesOption: Locator
@@ -55,7 +55,7 @@ export class NavigationMenuPage {
 
     //------------------------------------------- Responsive Menu Constructor ---------------------------------------------//  
 
-        this.navigationResponsiveHamburgerMenuIcon = page.locator("xpath=//div[@aria-label='Alternar menú']").first()
+        this.navigationResponsiveHamburgerMenuIcon = page.locator("xpath=html/body/div[2]/div[1]/div[2]/div[1]/div/div")
         this.navigationResponsiveHomeMenuOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[2]/ul/li[1]/a')
         this.navigationResponsiveAboutMenuOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[2]/ul/li[2]/a')
         this.navigationResponsiveServicesMenuOption = page.locator('xpath=/html/body/div[2]/div[1]/div[2]/div[1]/div/nav[2]/ul/li[3]/a')

@@ -4,7 +4,7 @@ export class FooterPage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly footerIconImage: Locator
+    public readonly footerIconImage: Locator
     private readonly footerDescription: Locator
     public readonly footerMenuTitle: Locator
     public readonly footerMenuHomeButton: Locator
@@ -52,10 +52,10 @@ export class FooterPage {
         this.footerContactInformationEmailTitle = page.locator('xpath=/html/body/footer/div[2]/div[3]/div[2]/div[4]/div[1]/div/h4')
         this.footerContactInformationEmailDescription = page.locator('xpath=/html/body/footer/div[2]/div[3]/div[2]/div[4]/div[2]/div/p/a')
         this.footerLegalTitle = page.locator('xpath=/html/body/footer/div[2]/div[4]/div[1]/div/h2')
-        this.footerLegalNoticeButton = page.getByRole('link', { name: 'Aviso legal' })
-        this.footerLegalPrivacyPolicyButton = page.getByRole('link', { name: 'Política de privacidad' })
-        this.footerLegalAccessibilityButton = page.getByRole('link', { name: 'Accesibilidad' })
-        this.footerLegalPolicyCookiesButton = page.getByRole('link', { name: 'Política de cookies (UE)' })
+        this.footerLegalNoticeButton = page.getByRole('link', { name: 'Aviso legal'}).first()
+        this.footerLegalPrivacyPolicyButton = page.getByRole('link', { name: 'Política de privacidad' }).first()
+        this.footerLegalAccessibilityButton = page.getByRole('link', { name: 'Accesibilidad' }).first()
+        this.footerLegalPolicyCookiesButton = page.getByRole('link', { name: 'Política de cookies (UE)' }).first()
         this.footerKitDigitalRequirement = page.locator('xpath=/html/body/footer/div[3]/div/div/img')
 
     //------------------------------------ Responsive Constructor -----------------------------------------//

@@ -9,8 +9,7 @@ import { NavigationMenuPage } from '../pages/NavigationMenuPage';
 import { ServicePage } from '../pages/ServicePage';
 import { LegalNoticePage } from '../pages/LegalNoticePage';
 import { PrivacyPolicyPage } from '../pages/PrivacyPolicy';
-import { CookiesPolicyPage } from '../pages/CookiesPolicyPage';
-import { AccessibilityPage } from '../pages/AccessibilityPage';
+
 
 test('validateResponsiveHamburgerMenu', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
@@ -27,7 +26,7 @@ test('validateResponsiveHamburgerMenu', async ({ page }) => {
     await WebNavigationMenuPage.clickNavigationResponsiveHamburgerMenuIcon()
     await WebNavigationMenuPage.clickNavigationResponsiveContactMenuOption()
 
-    await page.close()
+    //await page.close()
 })
 
 test('validateResponsiveAboutOption', async ({ page }) => {
@@ -266,6 +265,30 @@ test('validateLegalNoticeSpanish', async ({ page }) => {
     await page.close()
 })
 
+test('validateResponsiveLegalNoticeEnglish', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 })
+    await page.goto('')
+
+    const WebManageConsentModalPage = new ManageConsentModalPage(page)
+    const WebLegalNoticePage = new LegalNoticePage(page)
+    const WebFooterPage = new FooterPage(page)
+    const WebNavigationMenuPage = new NavigationMenuPage(page)
+
+    await WebManageConsentModalPage.clickManageConcentCloseButton()
+    await WebFooterPage.clickFooterLegalNoticeResponsiveButton()
+    await WebNavigationMenuPage.clickNavigationLanguagePicker()
+    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerEnglishOption()
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('en')
+    await expect(WebLegalNoticePage.legalNoticeTitle).toHaveText('Legal notice')
+    await expect(WebLegalNoticePage.legalNoticeEnglishSubtitle).toHaveText('INFORMATION SOCIETY SERVICES LAW (LSSI)')
+    await expect(WebLegalNoticePage.legalNoticeFirstItemEnglishTitle).toHaveText('1. IDENTIFICATION DATA')
+    await expect(WebLegalNoticePage.legalNoticeSecondItemEnglishTitle).toHaveText('2. OBJECT')
+    await expect(WebLegalNoticePage.legalNoticeThirdItemEnglishTitle).toHaveText('3. PRIVACY AND DATA PROCESSING')
+    await expect(WebLegalNoticePage.legalNoticeFourthItemEnglishTitle).toHaveText('4. INDUSTRIAL AND INTELLECTUAL PROPERTY')
+
+    await page.close()
+})
+
 test('validateResponsivePrivacyPolicy', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 })
     await page.goto('')
@@ -294,6 +317,28 @@ test('validateResponsivePrivacyPolicy', async ({ page }) => {
     await expect(WebPrivacyPolicyPage.privacyPolicyEighthItemTitle).toHaveText('8. INFORMACIÓN LEGAL')
     await expect(WebPrivacyPolicyPage.privacyPolicyEighthItemDescription).toBeVisible()
 
+
+    await page.close()
+})
+
+test('validateResponsivePrivacyPolicyEnglish', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 })
+    await page.goto('')
+
+    const WebPrivacyPolicyPage = new PrivacyPolicyPage(page)
+    const WebFooterPage = new FooterPage(page)
+    const WebNavigationMenuPage = new NavigationMenuPage(page)
+    const WebManageConsentModalPage = new ManageConsentModalPage(page)
+
+    await WebManageConsentModalPage.clickManageConcentCloseButton()
+    await WebFooterPage.clickFooterLegalPrivacyPolicyResponsiveButton()
+    await WebNavigationMenuPage.clickNavigationLanguagePicker()
+    await WebNavigationMenuPage.clickNavigationSelectLanguagePickerEnglishOption()
+    await expect(WebNavigationMenuPage.navigationLanguageAssertionText).toHaveText('en')
+    await expect(WebPrivacyPolicyPage.privacyPolicyTitle).toHaveText('Privacy Policy')
+    await expect(WebPrivacyPolicyPage.privacyPolicyFirstItemEnglishTitle).toHaveText('1. INFORMATION TO THE USER')
+    await expect(WebPrivacyPolicyPage.privacyPolicySecondItemEnglishTitle).toHaveText('2. CONTACT')
+    await expect(WebPrivacyPolicyPage.privacyPolicyThirdItemEnglishTitle).toHaveText('3. KEY PRINCIPLES')
 
     await page.close()
 })
