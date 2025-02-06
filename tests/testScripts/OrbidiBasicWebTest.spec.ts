@@ -12,7 +12,7 @@ import { PrivacyPolicyPage } from '../pages/PrivacyPolicy';
 import { CookiesPolicyPage } from '../pages/CookiesPolicyPage';
 import { AccessibilityPage } from '../pages/AccessibilityPage';
 
-test('validateSpanishLanguageTest', async ({ page }) => {
+test('validateSpanishLanguageTest', async ({ page }, testInfo) => {
     await page.goto('')
 
     const WebContactPage = new ContactPage(page)
@@ -38,6 +38,11 @@ test('validateSpanishLanguageTest', async ({ page }) => {
 
     await WebNavigationMenuPage.clickNavigationContactsOption()
     await expect(WebContactPage.contactFormContainerSendButton).toHaveText('Enviar')
+
+    await testInfo.attach('login', {
+        body: await page.screenshot(),
+        contentType: 'image/png'
+    })
     await page.close()
 
 })
