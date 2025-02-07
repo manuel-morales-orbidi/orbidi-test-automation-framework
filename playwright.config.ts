@@ -20,14 +20,17 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+
+  //workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  //reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://www.vitalilaser.com/',
+    //baseURL: 'https://blanicconsulting.com/',
+    //baseURL: process.env.BASE_URL || 'https://www.jorgearturobelliniserrano.com/',
+    //baseURL: 'https://www.vitalilaser.com/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -41,6 +44,19 @@ export default defineConfig({
     },
 
     {
+      name: 'LambdaTest-Chrome',
+      use: {
+        browserName: 'chromium',
+        headless: true,
+        baseURL: process.env.BASE_URL || 'https://blanicconsulting.com/',
+        viewport: { width: 1280, height: 720 },
+        screenshot: 'on',
+        video: 'on',
+        trace: 'on',
+      },
+    },
+ 
+    /*{
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
@@ -49,7 +65,7 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
-
+*/
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
@@ -70,7 +86,8 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
-
+  workers: 2,
+  reporter: [['html', { outputFolder: 'playwright-report' }]],
   /* Run your local dev server before starting the tests */
   // webServer: {
   //   command: 'npm run start',

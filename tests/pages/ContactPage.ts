@@ -4,9 +4,9 @@ export class ContactPage {
 
     //----------------------------------------- Find Selectors --------------------------------------------//
 
-    private readonly contactBlockTitle: Locator
+    public readonly contactBlockTitle: Locator
     private readonly contactBlockDescription: Locator
-    private readonly contactBlockImage: Locator
+    public readonly contactBlockImage: Locator
     private readonly contactDetailsContainerSchedule: Locator
     private readonly contactDetailsContainerCallUs: Locator
     private readonly contactDetailsContainerEmail: Locator
@@ -16,8 +16,9 @@ export class ContactPage {
     private readonly contactFormContainerTelephone: Locator
     private readonly contactFormContainerEmail: Locator
     private readonly contactFormContainerMessage: Locator
+    public readonly contactFormValidateStructureEmailMessage: Locator
     public readonly contactFormContainerSendButton: Locator
-
+    public readonly contactFormSendSuccessfullyMessage: Locator
 
 
     //------------------------------------------- Constructor ---------------------------------------------//
@@ -35,7 +36,9 @@ export class ContactPage {
         this.contactFormContainerTelephone = page.locator('xpath=//input[@id="form-field-field_ff312a8"]')
         this.contactFormContainerEmail = page.locator('xpath=//input[@id="form-field-email"]')
         this.contactFormContainerMessage = page.locator('xpath=//textarea[@id="form-field-message"]')
+        this.contactFormValidateStructureEmailMessage = page.locator('xpath=/html/body/div[3]/div[3]/div/div[2]/div/div/form/div[1]/div[3]/span')
         this.contactFormContainerSendButton = page.locator("xpath=//button[@class='elementor-button elementor-size-sm']")
+        this.contactFormSendSuccessfullyMessage = page.locator("xpath=/html/body/div[3]/div[3]/div/div[2]/div/div/form/div[2]")
 
     }
 
@@ -65,17 +68,17 @@ export class ContactPage {
     async getTextContactFormContainerDescription() {
         await this.contactFormContainerDescription.click()
     }
-    async getTextContactFormContainerName() {
-        await this.contactFormContainerName.click()
+    async fillContactNameFormField(contactName: string) {
+        await this.contactFormContainerName.fill(contactName)
     }
-    async getTextContactFormContainerTelephone() {
-        await this.contactFormContainerTelephone.click()
+    async fillContactTelephoneFormField(contactTelephone: string) {
+        await this.contactFormContainerTelephone.fill(contactTelephone)
     }
-    async getTextContactFormContainerEmail() {
-        await this.contactFormContainerEmail.click()
+    async fillContactEmailFormField(contactEmail: string) {
+        await this.contactFormContainerEmail.fill(contactEmail)
     }
-    async getTextContactFormContainerMessage() {
-        await this.contactFormContainerMessage.click()
+    async fillContactMessageFormField(contactMessage: string) {
+        await this.contactFormContainerMessage.fill(contactMessage)
     }
     async clickContactFormContainerSendButton() {
         await this.contactFormContainerSendButton.click()
