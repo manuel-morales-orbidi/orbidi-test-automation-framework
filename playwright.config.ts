@@ -10,9 +10,9 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    headless: true,
+    headless: false,
     //baseURL: 'https://blanicconsulting.com/',
-    baseURL: process.env.BASE_URL || 'https://www.jorgearturobelliniserrano.com/',
+    baseURL: process.env.BASE_URL, //|| 'https://www.jorgearturobelliniserrano.com/',
     //baseURL: 'https://www.vitalilaser.com/',
 
     trace: 'on-first-retry',
