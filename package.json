@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "A comprehensive test automation framework for Orbidi's Operations product, designed to streamline quality assurance processes and ensure robust, reliable software delivery.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "playwright-lighthousePerformance": "npx playwright test lighthousePerformance.spec.ts --project=chromium",
+    "playwright-generating:allure-report": "allure generate allure-results -o allure-report --clean && allure open allure-report",
+    "clean-playwright-reports": "rimraf lighthouse-reports allure-report allure-results playwright-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.49.1",
-    "@types/node": "^22.10.7"
+    "@types/node": "^22.10.7",
+    "allure-playwright": "^3.0.0-beta.12",
+    "lighthouse": "^12.2.1",
+    "playwright-lighthouse": "^4.0.0",
+    "rimraf": "^5.0.10"
   }
 }
